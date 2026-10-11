@@ -13,3 +13,9 @@ storage/
 .idea/
 .DS_Store
 Thumbs.db
+# Archify 运行收据（含本机绝对路径），不入库；仅保留架构图(.html)与源 IR(candidate.json)
+.archify/**/*.browser-check.json
+.archify/**/*.delivery.json
+.archify/**/*.finalize.json
+.archify/**/*.finalize-summary.json
+

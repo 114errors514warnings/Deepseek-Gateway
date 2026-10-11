@@ -1,0 +1,537 @@
+{
+  "project": "DeepSeekGateway",
+  "generated_at": "2026-10-11 21:33:51",
+  "gates": [
+    {
+      "layer": "L1",
+      "id": "pytest_suite",
+      "desc": "功能/单元测试全部通过",
+      "value": 0,
+      "target": "exit == 0",
+      "status": "PASS",
+      "detail": "40 passed in 1.82s"
+    },
+    {
+      "layer": "L2",
+      "id": "routing_accuracy",
+      "desc": "离线回放带标签请求的路由准确率",
+      "value": 1.0,
+      "target": ">= 0.85",
+      "status": "PASS",
+      "detail": "30/30 命中"
+    },
+    {
+      "layer": "L2",
+      "id": "routing_no_regression",
+      "desc": "相对冻结基线不回归（基线只读）",
+      "value": 1.0,
+      "target": "Δ >= -0.02",
+      "status": "PASS",
+      "detail": "冻结基线=1.0，Δ=+0.0000（容忍 0.02）"
+    },
+    {
+      "layer": "L2",
+      "id": "cost_saving_rate",
+      "desc": "相对「全 high」基线的模型化成本节省率",
+      "value": 0.4069,
+      "target": ">= 0.15",
+      "status": "PASS",
+      "detail": "baseline=$0.2088 smart=$0.12384（离线模型化，真实 A/B 属 L3）"
+    },
+    {
+      "layer": "L2",
+      "id": "false_route_rate",
+      "desc": "应 max 却路由 low 的比例",
+      "value": 0.0,
+      "target": "<= 0.02",
+      "status": "PASS",
+      "detail": "误路由 0 例 []"
+    },
+    {
+      "layer": "L2",
+      "id": "metering_completeness",
+      "desc": "usage 解析成功率",
+      "value": 1.0,
+      "target": ">= 0.99",
+      "status": "PASS",
+      "detail": "7 种 usage 结构"
+    },
+    {
+      "layer": "L3",
+      "id": "deploy_smoke",
+      "desc": "经真实客户端调用上游的部署冒烟 + 真实 A/B（成本/成功率/延迟）",
+      "value": null,
+      "target": "success_rate 不降、p95 ≤ +20%、cost ↓",
+      "status": "NO_GATE",
+      "detail": "需要真实 DEEPSEEK_API_KEY 与网络，离线环境不判定（不参与退出码）"
+    }
+  ],
+  "routing": {
+    "accuracy": 1.0,
+    "hits": 30,
+    "total": 30,
+    "per_case": [
+      {
+        "id": "s01",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s02",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s03",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s04",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s05",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s06",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s07",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s08",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s09",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s10",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "n01",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n02",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n03",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n04",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n05",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "tools:1",
+        "pass": true
+      },
+      {
+        "id": "n06",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n07",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n08",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n09",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n10",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "c01",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c02",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c03",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c04",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c05",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c06",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c07",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c08",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "tools:1;kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c09",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c10",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      }
+    ]
+  },
+  "cost_ab": {
+    "baseline_cost_usd": 0.2088,
+    "smart_cost_usd": 0.12384,
+    "cost_saving_rate": 0.40689655172413797,
+    "false_route_rate": 0.0,
+    "misroutes": [],
+    "total": 30,
+    "per_case": [
+      {
+        "id": "s01",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s02",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s03",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s04",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s05",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s06",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s07",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s08",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s09",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "s10",
+        "category": "simple",
+        "effort": "low",
+        "baseline_cost_usd": 0.00048,
+        "smart_cost_usd": 0.000384
+      },
+      {
+        "id": "n01",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n02",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n03",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n04",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n05",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n06",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n07",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n08",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n09",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "n10",
+        "category": "normal",
+        "effort": "high",
+        "baseline_cost_usd": 0.00216,
+        "smart_cost_usd": 0.00216
+      },
+      {
+        "id": "c01",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c02",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c03",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c04",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c05",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c06",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c07",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c08",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c09",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      },
+      {
+        "id": "c10",
+        "category": "complex",
+        "effort": "max",
+        "baseline_cost_usd": 0.01824,
+        "smart_cost_usd": 0.00984
+      }
+    ]
+  },
+  "conclusion": "PASS"
+}

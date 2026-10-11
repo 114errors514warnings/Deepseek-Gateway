@@ -1,0 +1,281 @@
+{
+  "project": "ContextOptimizer",
+  "generated_at": "2026-10-11 01:43:17",
+  "gates": [
+    {
+      "layer": "L1",
+      "id": "pytest_suite",
+      "desc": "功能/单元测试全部通过",
+      "value": 0,
+      "target": "exit == 0",
+      "status": "PASS",
+      "detail": "31 passed in 1.64s"
+    },
+    {
+      "layer": "L2",
+      "id": "routing_accuracy",
+      "desc": "离线回放带标签请求的路由准确率",
+      "value": 1.0,
+      "target": ">= 0.85",
+      "status": "PASS",
+      "detail": "30/30 命中"
+    },
+    {
+      "layer": "L3",
+      "id": "deploy_smoke",
+      "desc": "经真实客户端调用上游的部署冒烟",
+      "value": null,
+      "target": "success_rate 不下降",
+      "status": "NO_GATE",
+      "detail": "需要真实 DEEPSEEK_API_KEY 与网络，离线环境不判定（不参与退出码）"
+    }
+  ],
+  "routing": {
+    "accuracy": 1.0,
+    "hits": 30,
+    "total": 30,
+    "per_case": [
+      {
+        "id": "s01",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s02",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s03",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s04",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s05",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s06",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s07",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s08",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s09",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "s10",
+        "category": "simple",
+        "expected": "low",
+        "got": "low",
+        "reason": "kw:simple",
+        "pass": true
+      },
+      {
+        "id": "n01",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n02",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n03",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n04",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n05",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "tools:1",
+        "pass": true
+      },
+      {
+        "id": "n06",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n07",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n08",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n09",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "n10",
+        "category": "normal",
+        "expected": "high",
+        "got": "high",
+        "reason": "default:high",
+        "pass": true
+      },
+      {
+        "id": "c01",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c02",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c03",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c04",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c05",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c06",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c07",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c08",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "tools:1;kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c09",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      },
+      {
+        "id": "c10",
+        "category": "complex",
+        "expected": "max",
+        "got": "max",
+        "reason": "kw:complex",
+        "pass": true
+      }
+    ]
+  },
+  "conclusion": "PASS"
+}

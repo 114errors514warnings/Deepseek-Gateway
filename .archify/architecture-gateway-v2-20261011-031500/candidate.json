@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "LLM Gateway V2 · 本地 LLM 网关架构",
+    "subtitle": "多信号路由 · 预算 · 反馈闭环 · 多 provider · Dashboard",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-gateway-v2-20261011-031500/gateway-v2-architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "codex", "type": "external", "label": "Codex", "sublabel": "Responses 客户端", "pos": [40, 96], "size": [160, 60] },
+    { "id": "cline", "type": "external", "label": "Cline", "sublabel": "Chat 客户端", "pos": [40, 216], "size": [160, 60] },
+    { "id": "gateway", "type": "backend", "label": "LLM Gateway", "sublabel": "FastAPI :9000", "pos": [310, 156], "size": [168, 72], "tag": "本机回环" },
+    { "id": "router", "type": "backend", "label": "路由打分", "sublabel": "多信号 → effort", "pos": [560, 84], "size": [156, 62] },
+    { "id": "budget", "type": "backend", "label": "预算控制", "sublabel": "降档 / 拒绝", "pos": [560, 236], "size": [156, 62] },
+    { "id": "providers", "type": "cloud", "label": "Provider 抽象", "sublabel": "OpenAI 兼容后端", "pos": [776, 146], "size": [160, 66] },
+    { "id": "deepseek", "type": "cloud", "label": "DeepSeek API", "sublabel": "responses / chat", "pos": [1010, 146], "size": [160, 66] },
+    { "id": "sqlite", "type": "database", "label": "SQLite 计量", "sublabel": "usage / feedback", "pos": [310, 372], "size": [168, 66] },
+    { "id": "dashboard", "type": "frontend", "label": "Dashboard", "sublabel": "成本 · 成功率 · 分位数", "pos": [700, 372], "size": [160, 66] }
+  ],
+  "connections": [
+    { "id": "codex-gateway", "from": "codex", "to": "gateway", "label": "Responses API", "variant": "emphasis" },
+    { "id": "cline-gateway", "from": "cline", "to": "gateway", "label": "Chat API", "variant": "emphasis" },
+    { "id": "gateway-router", "from": "gateway", "to": "router", "label": "打分" },
+    { "id": "router-budget", "from": "router", "to": "budget", "label": "预算" },
+    { "id": "budget-providers", "from": "budget", "to": "providers", "label": "选后端" },
+    { "id": "providers-deepseek", "from": "providers", "to": "deepseek", "label": "转发" },
+    { "id": "gateway-sqlite", "from": "gateway", "to": "sqlite", "label": "计量", "fromSide": "bottom", "toSide": "top" },
+    { "id": "sqlite-dashboard", "from": "sqlite", "to": "dashboard", "label": "成本 · 成功率 · p95", "fromSide": "right", "toSide": "left" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "路由（V2）", "items": ["多信号打分：输入长度 / 工具数 / 轮次 / 关键词 / 历史失败", "输出可审计的 routed_reason，落库可回放"] },
+    { "dot": "emerald", "title": "预算与计费", "items": ["每会话 / 每日预算；超预算降档或 429 拒绝", "计量口径统一在 metering.py：input/cached/output 与缓存命中"] },
+    { "dot": "rose", "title": "反馈闭环", "items": ["POST /v1/feedback 接入上游工具执行结果", "失败会话的后续请求自动升一档（low→high→max）"] },
+    { "dot": "amber", "title": "可观测与交付", "items": ["全响应路径带 X-Gateway-* 头（含流式）", "/health 上游连通性探测；/metrics 分位数与时间序列", "离线评测：路由准确率 / 成本节省率 / 误路由率 / 计量完整性"] }
+  ]
+}

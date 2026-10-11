@@ -4,6 +4,28 @@
 V1 的设计重点是兼容性与可观测性：它不压缩、不重写客户端发送的上下文，也不试图读取客户端未发送的内部提示词。
 V2 在保持这一边界的前提下，补齐了 **可观测加固（V1.1）** 与 **智能路由 / 预算 / 反馈闭环 / 多 provider / Dashboard**。
 
+## 请求何时会经过本网关
+
+**方向是：客户端 → 本网关 → api.deepseek.com。** 不是 DeepSeek 调用本网关，而是本网关替客户端去调用 DeepSeek。
+
+```text
+Codex / Cline / curl  →  http://127.0.0.1:9000  →  https://api.deepseek.com
+        (客户端)              (本网关)                 (真正的 DeepSeek)
+```
+
+只有**客户端把自己的 `base_url` 显式指向 `http://127.0.0.1:9000`** 时，请求才会经过本网关：
+
+- Codex CLI —— 走 `/v1/responses`
+- Cline / VSCode 插件（OpenAI Compatible）—— 走 `/v1/chat/completions`
+- 自行用 `curl` / 脚本 / SDK 直接请求上述端点
+
+未被指向它的程序一律不经过本网关。DeepSeek 官方 App 或其它工具不会自动走它。
+
+> 提示：本网关只服务于**显式配置了它**的客户端，与「和 AI 聊天」这件事本身无关。
+> 例如 OpenCode 等云端对话所用的模型托管在后端，不经过本机回环地址 `127.0.0.1:9000`，
+> 因此不会出现在本网关的日志与 Dashboard 里。想确认有没有流量经过，看 `GET /v1/usage`
+> 或 Dashboard 的「最近请求」即可。
+
 ## 功能
 
 ### 兼容转发（V1 起）

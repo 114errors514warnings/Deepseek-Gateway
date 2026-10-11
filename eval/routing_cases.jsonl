@@ -1,0 +1,30 @@
+{"id": "s01", "category": "simple", "expected": "low", "input": "list files in the src directory"}
+{"id": "s02", "category": "simple", "expected": "low", "input": "search files for the TODO marker"}
+{"id": "s03", "category": "simple", "expected": "low", "input": "read file config.py and show it"}
+{"id": "s04", "category": "simple", "expected": "low", "input": "grep the server logs for errors"}
+{"id": "s05", "category": "simple", "expected": "low", "input": "summarize this paragraph for me"}
+{"id": "s06", "category": "simple", "expected": "low", "input": "格式转换：把这份 csv 转成 json"}
+{"id": "s07", "category": "simple", "expected": "low", "input": "文件搜索：找出所有 md 文件"}
+{"id": "s08", "category": "simple", "expected": "low", "input": "目录读取：看一下有哪些子目录"}
+{"id": "s09", "category": "simple", "expected": "low", "input": "总结一下上面的内容"}
+{"id": "s10", "category": "simple", "expected": "low", "messages": [{"role": "user", "content": "摘要这段会议记录"}], "note": "simple keyword, no tools"}
+{"id": "n01", "category": "normal", "expected": "high", "input": "帮我修复这个 bug 并补上单元测试"}
+{"id": "n02", "category": "normal", "expected": "high", "input": "把这段 Python 代码改写成 async 版本"}
+{"id": "n03", "category": "normal", "expected": "high", "input": "给这个函数加上类型注解与文档字符串"}
+{"id": "n04", "category": "normal", "expected": "high", "input": "实现一个带重试逻辑的 HTTP 客户端封装"}
+{"id": "n05", "category": "normal", "expected": "high", "input": "search files for the parser and then patch it", "tools": [{"type": "function", "function": {"name": "search_files"}}]}
+{"id": "n06", "category": "normal", "expected": "high", "messages": [{"role": "user", "content": "请把这段逻辑抽成独立函数"}]}
+{"id": "n07", "category": "normal", "expected": "high", "input": "为这个模块补充参数校验和错误处理"}
+{"id": "n08", "category": "normal", "expected": "high", "input": "把日志从 print 改成 logging 并保留级别"}
+{"id": "n09", "category": "normal", "expected": "high", "input": "write a unit test for the chunker overlap behavior"}
+{"id": "n10", "category": "normal", "expected": "high", "input": "add input validation to the request handler"}
+{"id": "c01", "category": "complex", "expected": "max", "input": "分析这个项目的整体架构并给出重构方案"}
+{"id": "c02", "category": "complex", "expected": "max", "input": "perform a root cause analysis of this intermittent failure"}
+{"id": "c03", "category": "complex", "expected": "max", "input": "write a design doc for the new architecture"}
+{"id": "c04", "category": "complex", "expected": "max", "input": "refactor the module to reduce coupling"}
+{"id": "c05", "category": "complex", "expected": "max", "input": "深度分析这段代码的性能优化空间"}
+{"id": "c06", "category": "complex", "expected": "max", "input": "跨模块迁移方案设计：从单体到服务化"}
+{"id": "c07", "category": "complex", "expected": "max", "input": "complex migration strategy across services"}
+{"id": "c08", "category": "complex", "expected": "max", "input": "疑难排查：定位数据库慢查询的根因", "tools": [{"type": "function", "function": {"name": "read_file"}}]}
+{"id": "c09", "category": "complex", "expected": "max", "messages": [{"role": "user", "content": "整体架构评审 + 重构路线图"}]}
+{"id": "c10", "category": "complex", "expected": "max", "input": "请做一次深度分析，输出性能优化与重构方案设计"}

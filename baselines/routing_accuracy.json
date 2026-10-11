@@ -1,0 +1,11 @@
+{
+  "project": "ContextOptimizer",
+  "metric": "routing_accuracy",
+  "accuracy": 1.0,
+  "hits": 30,
+  "total": 30,
+  "dataset": "eval/routing_cases.jsonl",
+  "dataset_sha256": "94dd3a0fe30b1f30f60a94351df98edef63110812fc52d4661a891d4c8ecafe5",
+  "note": "冻结基线：只读，不重跑。换口径/换数据集必须新建文件并 bump。",
+  "frozen_at": "2026-10-11"
+}

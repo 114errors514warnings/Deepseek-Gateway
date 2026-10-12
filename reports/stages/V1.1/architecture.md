@@ -1,4 +1,4 @@
-# ContextOptimizer · 架构说明 · V1.1 可观测加固
+# Deepseek-Gateway · 架构说明 · V1.1 可观测加固
 
 > 配套报告：`reports/stages/V1.1/report.md`；整机架构图：`.archify/architecture-gateway-v2-20261011-031500/gateway-v2-architecture.html`
 

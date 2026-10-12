@@ -1,5 +1,5 @@
 {
-  "project": "ContextOptimizer",
+  "project": "Deepseek-Gateway",
   "metric": "routing_accuracy",
   "accuracy": 1.0,
   "hits": 30,

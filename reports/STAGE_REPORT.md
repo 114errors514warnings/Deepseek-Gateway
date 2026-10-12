@@ -1,6 +1,6 @@
-# ContextOptimizer · 阶段完成报告
+# Deepseek-Gateway · 阶段完成报告
 
-> 依据：《AI 项目完整版执行方案与测试指标》§3（`ContextOptimizer · LLM Gateway`）
+> 依据：《AI 项目完整版执行方案与测试指标》§3（`Deepseek-Gateway · LLM Gateway`）
 > 原则：先测后定、基线只读、口径版本化、机制正确性与效果指标分离
 > 报告时间：2026-10-11
 

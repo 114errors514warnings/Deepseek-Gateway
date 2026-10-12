@@ -1,4 +1,4 @@
-"""DeepSeekGateway 验收脚本（离线）。
+"""Deepseek-Gateway 验收脚本（离线）。
 
 产出：
 - reports/acceptance_<timestamp>.json（机器可读，含每项门禁与 per-case）
@@ -129,7 +129,7 @@ def build_report() -> tuple[dict, int]:
 
     failed = [g for g in gates if g["status"] == "FAIL"]
     report = {
-        "project": "DeepSeekGateway",
+        "project": "Deepseek-Gateway",
         "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "gates": gates,
         "routing": routing,
@@ -141,7 +141,7 @@ def build_report() -> tuple[dict, int]:
 
 def render_markdown(report: dict) -> str:
     lines = [
-        "# DeepSeekGateway 验收报告",
+        "# Deepseek-Gateway 验收报告",
         "",
         f"- 生成时间：{report['generated_at']}",
         f"- 结论：**{report['conclusion']}**",

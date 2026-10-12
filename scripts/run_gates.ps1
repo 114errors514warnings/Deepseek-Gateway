@@ -1,4 +1,4 @@
-# DeepSeekGateway · 一键门禁（Windows PowerShell）
+# Deepseek-Gateway · 一键门禁（Windows PowerShell）
 # 用法：  .\scripts\run_gates.ps1
 # 退出码：0 = 全 PASS/NO_GATE/BASELINE；1 = 存在 FAIL（可直接作 CI 门禁）
 $ErrorActionPreference = 'Stop'

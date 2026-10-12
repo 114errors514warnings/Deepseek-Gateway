@@ -29,7 +29,7 @@ def measure() -> dict:
         payload = {k: v for k, v in case.items() if k in ("input", "messages", "tools")}
         hits += int(selected_route(payload).effort == case["expected"])
     return {
-        "project": "DeepSeekGateway",
+        "project": "Deepseek-Gateway",
         "metric": "routing_accuracy",
         "accuracy": hits / len(cases) if cases else 0.0,
         "hits": hits,

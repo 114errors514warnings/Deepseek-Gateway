@@ -1,4 +1,4 @@
-# ContextOptimizer · 架构说明 · V2 智能路由 + 预算 + 反馈闭环
+# Deepseek-Gateway · 架构说明 · V2 智能路由 + 预算 + 反馈闭环
 
 > 配套报告：`reports/stages/V2/report.md`；整机架构图：`.archify/architecture-gateway-v2-20261011-031500/gateway-v2-architecture.html`
 
